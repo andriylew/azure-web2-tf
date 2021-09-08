@@ -46,8 +46,8 @@ resource "azurerm_mysql_server" "tf-mysql-serv" {
   location            = azurerm_resource_group.tf-rg-group.location
   resource_group_name = azurerm_resource_group.tf-rg-group.name
 
-  administrator_login          = "alev-admin"
-  administrator_login_password = "HelloPassword1"
+  administrator_login          = var.sql_admin_login
+  administrator_login_password = var.sql_admin_password 
   sku_name   = "B_Gen5_2"
   storage_mb = 5120
   version    = "5.7"
