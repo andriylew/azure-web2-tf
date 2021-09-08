@@ -11,8 +11,8 @@ resource "azurerm_app_service_plan" "tf-service-plan" {
   name                = var.app_service_plan_name
   location            = azurerm_resource_group.tf-rg-group.location
   resource_group_name = azurerm_resource_group.tf-rg-group.name
-  kind = "Linux"
-  reserved = true 
+  kind                = "Linux"
+  reserved            = true
   sku {
     tier = "Standard"
     size = "S1"
@@ -46,11 +46,11 @@ resource "azurerm_mysql_server" "tf-mysql-serv" {
   location            = azurerm_resource_group.tf-rg-group.location
   resource_group_name = azurerm_resource_group.tf-rg-group.name
 
-  administrator_login          = var.sql_admin_login
-  administrator_login_password = var.sql_admin_password 
-  sku_name   = "B_Gen5_2"
-  storage_mb = 5120
-  version    = "5.7"
+  administrator_login               = var.sql_admin_login
+  administrator_login_password      = var.sql_admin_password
+  sku_name                          = "B_Gen5_2"
+  storage_mb                        = 5120
+  version                           = "5.7"
   auto_grow_enabled                 = false
   backup_retention_days             = 7
   geo_redundant_backup_enabled      = false

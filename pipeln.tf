@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     azuredevops = {
-      source = "microsoft/azuredevops"
+      source  = "microsoft/azuredevops"
       version = ">=0.1.0"
     }
   }
@@ -10,7 +10,7 @@ terraform {
 provider "azuredevops" {
   org_service_url       = "https://dev.azure.com/andriylew29"
   personal_access_token = var.personalacctoken
-#set with env var as AZDO_PERSONAL_ACCESS_TOKEN
+  #set with env var as AZDO_PERSONAL_ACCESS_TOKEN
 
 }
 
@@ -33,7 +33,7 @@ resource "azuredevops_serviceendpoint_github" "serviceendpoint_alev_gh" {
 
   auth_personal {
     # personal_access_token set with AZDO_GITHUB_SERVICE_CONNECTION_PAT environment variable
-    
+
   }
 }
 
